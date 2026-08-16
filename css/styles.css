@@ -1,0 +1,294 @@
+/* ========================================
+   PNT2
+   ========================================
+   En este archivo aprendemos:
+   1. Selectores CSS básicos
+   2. Layout con Flexbox
+   3. Diseño responsivo
+   4. Transiciones y efectos hover
+   ======================================== */
+
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222222;
+}
+
+/* ========================================
+   CABECERA Y PIE DE PÁGINA
+   ======================================== */
+.site-header,
+.site-footer {
+  background-color: #ffffff;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 16px 24px;
+}
+
+.site-footer {
+  border-top: 1px solid #d9d9d9;
+  border-bottom: none;
+  margin-top: 32px;
+}
+
+.site-header h1,
+.site-footer p {
+  margin: 0;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+   ======================================== */
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.page-intro {
+  margin-bottom: 24px;
+}
+
+.page-intro h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* ========================================
+   LISTA DE USUARIOS
+   ======================================== */
+.user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   TARJETA DE USUARIO INDIVIDUAL
+   ======================================== */
+.user-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  
+  /* Transición para efectos hover */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ========================================
+   EFECTO HOVER EN TARJETAS
+   ======================================== */
+.user-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   FOTO DE PERFIL CIRCULAR
+   ======================================== */
+.user-photo {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   INFORMACIÓN DEL USUARIO
+   ======================================== */
+.user-info {
+  flex: 1;
+}
+
+.user-info h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.user-role,
+.user-location,
+.user-description {
+  margin: 0 0 8px;
+}
+
+.user-role {
+  font-weight: bold;
+  color: #2b4bee;
+}
+
+/* ========================================
+   ACCIONES (ENLACES)
+   ======================================== */
+.user-actions {
+  margin-top: 12px;
+}
+
+.user-actions a {
+  color: #2b4bee;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.user-actions a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   ESTILOS PARA PERFIL DE USUARIO
+   ======================================== */
+.user-profile {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.user-profile-info {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.user-profile-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 4px solid #f4f4f4;
+}
+
+.user-profile-data {
+  flex: 1;
+}
+
+.user-profile-data h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 32px;
+  color: #222222;
+}
+
+.user-profile-data .user-role {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2b4bee;
+  margin-bottom: 12px;
+}
+
+.user-profile-data .user-location {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 16px;
+}
+
+.user-profile-data .user-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 0;
+}
+
+.user-profile-additional {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.user-profile-additional h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #222222;
+  font-size: 20px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.contact-info strong {
+  color: #333333;
+  display: inline-block;
+  width: 120px;
+}
+
+.error-message {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  color: #856404;
+}
+
+.error-message h2 {
+  margin-top: 0;
+  color: #856404;
+}
+
+.error-message a {
+  color: #2b4bee;
+  text-decoration: none;
+}
+
+.error-message a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   DISEÑO RESPONSIVO PARA PERFIL
+   ======================================== */
+@media (max-width: 768px) {
+  .user-profile {
+    padding: 20px;
+  }
+  
+  .user-profile-info {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .user-profile-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  
+  .user-profile-data h2 {
+    font-size: 24px;
+  }
+  
+  .contact-info strong {
+    display: block;
+    width: auto;
+    margin-bottom: 4px;
+  }
+}
+
+/* ========================================
+   DISEÑO RESPONSIVO
+   ======================================== */
+@media (max-width: 640px) {
+  .user-item {
+    flex-direction: column;
+  }
+
+  .user-photo {
+    width: 96px;
+    height: 96px;
+    max-width: none;
+  }
+}
