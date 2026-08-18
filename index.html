@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function handlerClick_Card(element) {
+            //console.log("Card clicked:", element);
+            const contador = parseInt(element.children[1].children[2].textContent) + 1;
+            element.children[1].children[2].textContent = contador;
+        }
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -13,19 +20,65 @@
     <main id="main" class="main-content">
         <section>
             <ul class="user-list">
-                <li class="user-item">
+                <li class="user-item" onclick="handlerClick_Card(this)" >
                     <img class="user-photo" src="img/Adele Vance.jpg" />
                     <div class="user-info">
                        <h3>Adele Vance</h3>
                        <p>Software Engineer</p>
-                       <p>San Francisco, CA</p>
+                       <p>0</p>
                        <p class="user-description">
                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                        </p>
+                       <p class="user-actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                       </p>
                     </div>
                 </li>
-                <li>Usuario 2</li>
-                <li>Usuario 3</li>
+                <li class="user-item" onclick="handlerClick_Card(this)">
+                    <img class="user-photo" src="img/Alex Wilber.jpg" />
+                    <div class="user-info">
+                       <h3>Alex Wilber</h3>
+                       <p>Product Manager</p>
+                       <p>0</p>
+                       <p class="user-description">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                       </p>
+                       <p class="user-actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                       </p>
+                    </div>
+                </li>
+                <li class="user-item" onclick="handlerClick_Card(this)">
+                    <img class="user-photo" src="img/Diego Siciliani.jpg" />
+                    <div class="user-info">
+                       <h3>Diego Siciliani</h3>
+                       <p>Developer</p>
+                       <p>0</p>
+                       <p class="user-description">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                       </p>
+                       <p class="user-actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                       </p>
+                    </div>
+                </li>
+                <li class="user-item" onclick="handlerClick_Card(this)">
+                    <img class="user-photo" src="img/Henrietta Mueller.jpg" />
+                    <div class="user-info">
+                       <h3>Henrietta Mueller</h3>
+                       <p>Designer</p>
+                       <p>New York, NY</p>
+                       <p class="user-description">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                       </p>
+                       <p class="user-actions">
+                            <a href="#">View Profile</a>
+                            <a href="#">Send Message</a>
+                       </p>
+                    </div>
             </ul>
         </section>
     </main>
